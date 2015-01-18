@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>My Angular App!</title>
+    <script src="/javascripts/angular.min.js"></script>
+	<script src="/javascripts/angular-ui-router.js"></script>
+    <script src="/javascripts/angularapp.js"></script>
+  </head>
+  <body data-ng-app="flapperNews" ng-controller="MainCtrl">
+    <div ng-repeat="post in posts |orderBy:'-upvote'">
+	<a ng-show='post.link' href="{{post.link}}">{{post.title}}</a>
+	<span ng-hide='post.link'>{{post.title}}</span>
+	<span ng-click='increase(post)'>upvote:{{post.upvote}}</span>
+    </div>
+	{{posts}}
+	<form ng-submit="addPost()">
+	<input ng-model="title" placeholder='Title' type='text'></input>
+	<input ng-model="link" placeholder='Link' type='text'></input>
+	<button type='submit'>Post</button>
+	</form>
+	
+  </body>
+</html>
