@@ -20,9 +20,9 @@ router.get('/post',function(req,res){
 /*save post*/
 router.post('/post', function(req, res, next) {
 console.log('in');
-  var post = new Post(req.body);
+  var post1 = new Post(req.body);
 
-  post.save(function(err, post){
+  post1.save(function(err, post){
     if(err){ return next(err); }
 
     res.json(post);
