@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="en" id="ng-app" data-ng-app="quiz" class="ng-app:quiz">
+<head>
+
+    <script> // wp8 viewport fix
+        (function(){if("-ms-user-select"in document.documentElement.style&&navigator.userAgent.match(/IEMobile\/10\.0/)){var e=document.createElement("style");e.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));document.getElementsByTagName("head")[0].appendChild(e)}})();
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />	
+    <meta name="description" content="AT&amp;T">
+    <meta name="keywords" content="quiz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	 
+	 <!-- Bootstrap -->
+    <link href="/knowhow/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/knowhow/css/app.css" rel="stylesheet">
+	<title>KnowHow</title>
+	
+	<script src="/knowhow/lib/jquery/jquery-1.9.1.min.js"></script>
+	<script src="/knowhow/lib/jquery/jquery-migrate-1.2.1.js"></script>
+
+    <script src="/knowhow/lib/angular-1.2.10/angular.min.js"></script>
+	 <script src="/knowhow/lib/angular-1.2.10/angular-sanitize.min.js"></script>
+	<script src="/knowhow/js/app.js"></script>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="lib/html5shiv.js"></script>
+    <script src="lib/respond.min.js"></script>
+   <![endif]-->
+
+</head>
+ <body ng-controller='MainCtrl'>
+ <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="/knowhow" class="navbar-brand"><span class='glyphicon glyphicon-globe'></span>&nbsp; Know How</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+              <ul class="nav navbar-nav">
+                <li><a href="javascript:void(0)" ng-click="feedback()"><span class='glyphicon glyphicon-heart'></span>&nbsp;FeedBack</a></li>
+                <li><a href="javascript:void(0)" ng-click="createQuiz()" ><span class='glyphicon glyphicon-pencil'></span>&nbsp;Create Knowhow</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+   </div>
+ 
+ <div data-ride="carousel" class="carousel slide" id="myCarousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li class="" data-slide-to="{{$index}}" data-target="#myCarousel" ng-class="x.status" ng-repeat="x in adviews"></li>
+      </ol>
+	   <span class="carousel-indicators h5"><small>Advertise on KnowHow</small></span>
+      <div role="listbox" class="carousel-inner">
+        <div ng-repeat="x in adviews" ng-class="x.status" class="item">
+			<img alt="slide{{$index+1}}" ng-src="{{x.img}}"/>
+			  <div class="container">
+				<div class="carousel-caption jumbotron jumbotron-nobg">
+				  <h1 ng-bind="x.title"></h1>
+				  <p ng-bind-html="x.text"></p>
+				  <p><a role="button" ng-href='{{x.link}}'  target="_blank" class="btn btn-lg btn-primary">Click Here</a></p>
+				</div>
+			  </div>
+        </div>
+       </div>
+      <a data-slide="prev" role="button" href="#myCarousel" class="left carousel-control">
+        <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a data-slide="next" role="button" href="#myCarousel" class="right carousel-control">
+        <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+  </div>	
+  <div class='jumbotron text-center text-muted'>
+	<h1>{{cont.title}} <span class='glyphicon glyphicon-hourglass'></span><h1>
+  </div>
+  
+	
+	<div ng-repeat="ct in cont.quiz" class='jumbotron jumbotron-bg'>
+		<div class='container'>
+			<div class='row'>
+			<div class='col-sm-8 well'> 
+				<div>
+					<div class="h3"><span class='glyphicon glyphicon-map-marker'></span>&nbsp;{{ct.q}}</div>
+					<div class="options" ng-repeat="cq in ct.a" >
+						<input type='radio' value="{{$index+1}}" ng-model="ct.ans" name="{{$parent.$index}}inp" />
+						<label class='h4'>{{cq}}</label>
+					</div>
+				</div>
+			</div>
+			<div class='col-sm-3 col-sm-offset-1 text-center well'>
+				<div class="glyphicon glyphicon-time clock" aria-hidden="true"></div>
+				<p><span class="h2">{{dead}}</span> Seconds</p>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class='jumbotron text-muted text-center'>
+		<div class='text-center'><span class='glyphicon glyphicon-phone'></span></div>
+		<div class='text-center'><input type="text" ng-model="cont.phone" class="form-control phone" placeholder="Phone Number"/></div>
+		<div class='text-center'><input type="text" ng-model="cont.operator" class="form-control phone" placeholder="Network"/></div>
+		<div class='h6 text-center'><span>[ * The Winner will get Rs100 FREE Talk time ]</span></div>
+	</div>
+	<div class="text-center">
+		<a role="button" ng-click='repair()' class="btn btn-lg btn-primary btn-warning">
+		<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{button.text}}
+		</a>
+		<p class="button-caption"><i>[**{{button.caption}}]</i></p>
+	</div>
+	<div class='hide'>{{cont |json}}</div>
+	<div class='well footer h6 text-center'><small>Site Design - Sathya Narayanan Sudhakar</small></div>
+	<!--[if lte IE 8]>
+	<script src="lib/es5-shim.min.js"></script>
+	<script src="lib/json3.min.js"></script>
+	<![endif]-->		
+	<script src="lib/bootstrap.min.js"></script>
+</body>
+</html>

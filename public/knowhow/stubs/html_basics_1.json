@@ -1,0 +1,56 @@
+{
+"title":"HTML THINGS TO KNOW",
+"Author":"",
+"phone":"Phone Number",
+"operator":"Mobile Operator(i.e. Airtel,Aircel)",
+
+"quiz":[{"q":"The purpose of a web browser is to read HTML documents and display them.",
+"a":["True","False"]},
+
+{"q":"What does HTML stand for ?",
+"a":["Home Tool Markup Language","Hyper Text Markup Language","Hyperlinks and Text Markup Language"]
+},
+
+{"q":"Which one is correct HTML tag for the largest heading ?",
+"a":["<thead/>","<section/>","<h1/>","<h6/>"]},
+
+{"q":"In HTML, 'display: inline-block' elements are normally displayed without starting a new line.",
+"a":["True","False"]},
+
+{"q":"How can you create an e-mail link ?",
+"a":["<mail href='xxx@yyy'>","<a href='mailto:xxx@yyy'>","<mail>xxx@yyy</mail>","<a href='xxx@yyy'>"]},
+
+{"q":"How can you open a link in a new tab/browser window ?",
+"a":["<a href='url' target='new'>","<a href='url'  new>","<a href='url'  target='_blank'>"]},
+
+{"q":"How to make a numbered list ?",
+"a":["<ul/>","<dl/>","<ol/>"]},
+
+{"q":"How do you insert a comment in a CSS file ?",
+"a":["/* this is a comment */","' this is a comment","// this is a comment","// this is a comment //"]},
+
+{"q":"How do you make each word in a text start with a capital letter ?",
+"a":["Text-transform: firstLetter","Text-transform: capitalize","Text-transform: uppercase","Text-transform: capitalletter"]},
+
+{"q":"How do you display a border like this:\n The top border = 10 pixels \nThe bottom border = 5 pixels \nThe left border = 20 pixels\nThe right border = 1pixel?",
+"a":["Border-width:10px 1px 5px 20px","Border-width:10px 5px 20px 1px","Border-width:10px 20px 5px 1px","Border-width:5px 20px 10px 1px"]},
+
+
+{"q":"Which one is Semantic element ?",
+"a":["<h1/> ","<span/>","<table/>","<div/>"]},
+
+{"q":"Which one is valid HTML5 API ?",
+"a":["SSE","Asynchronous worker","Event I/O Block","Dependency Injection"]},
+
+{"q":"What is WHATWG ?",
+"a":["Web HTML Application Technical Working Group","Web Hypertext Application Technical Working Group","Web Hypertext Application Technology Working Group","What you see what you get"]},
+
+{"q":"The  HTML5 attribute, 'contenteditable' is used to ?",
+"a":["Specify whether the content of an element should be editable or not","Return the position of the content inside a string","Update content from the server","All of the above"]},
+
+{"q":"Which built-in HTML5 object is used to draw on the canvas ?",
+"a":["getContent","getGraphics","getCanvas","getContext"]}
+
+]
+
+}

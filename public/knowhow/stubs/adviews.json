@@ -1,0 +1,7 @@
+
+[
+{"title":"CMPM","text":"Please ensure that <code>CMPM time reporting</code>&nbsp; is complete till this Friday. If there is any PMT issue, please follow up with Onsite team and complete the time reporting.","link":"https://intra.att.com/cmpm/main.cfm","img":"images/cmpm.png","status":"active"},
+{"title":"MiTIME","text":" Kindly ensure that you fill the effort and <code>Submit sheets on time </code>&nbsp;, verify if all the planned tasks are pushed to MiTime. For any issues, please follow up with Leads/Owners.","link":"http://war/","img":"images/war2.png"},
+{"title":"LEAVE TRACKER","text":"Leave Tracker is a simple and user-friendly online leave management tool that helps you to record, manage and keep track of your leave usage details effectively. <code>Plan your leaves Today</code>","link":"http://10.87.136.26:8080/leavetracker/","img":"images/leavetracker.png"},
+{"title":"DEVICE INVENTORY","text":"Device Inventory is a portal used for managing and tracking device usage. Registered <code>users can block devices </code>across different time slots and perform testing.","link":"http://10.87.136.26:8080/DevicePortal/","img":"images/DevInv.png"}
+]
